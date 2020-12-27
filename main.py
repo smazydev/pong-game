@@ -1,5 +1,10 @@
 from turtle import Turtle, Screen
 from paddle import Paddle
+
+R_POSITION = (350,0)
+L_POSITION = (-350,0)
+
+
 screen = Screen()
 screen.setup(width=800,height=600)
 screen.bgcolor("black")
@@ -7,13 +12,15 @@ screen.title("pong")
 screen.tracer(0)
 
 
-paddle = Paddle()
-
+r_paddle = Paddle(R_POSITION)
+l_paddle = Paddle(L_POSITION)
 
 
 screen.listen()
-screen.onkey(paddle.go_up,"Up")
-screen.onkey(paddle.go_down,"Down")
+screen.onkey(r_paddle.go_up,"Up")
+screen.onkey(r_paddle.go_down,"Down")
+screen.onkey(l_paddle.go_up,"w")
+screen.onkey(l_paddle.go_down,"s")
 
 
 
